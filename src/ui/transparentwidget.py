@@ -8,11 +8,12 @@ from PySide6.QtWidgets import (QApplication, QDialog, QLabel, QLineEdit,
                                QPushButton, QSystemTrayIcon, QVBoxLayout,
                                QWidget)
 
-from const import *
+from src.const import CONFIGS, ICON_PATH, SRC_PATH, load_config, CONFIG_FILE, ASSETS_PATH, FONT_FILE, ALARM_FILE
+from src.ui.configwindow import ConfigWindow
+from src.ui.traymenu import TrayMenuCustom
 
 
-
-class TransparentReminder(QWidget):
+class TransparentWidget(QWidget):
     def __init__(self, text, desktop_app_file):
         super().__init__()
 
@@ -62,6 +63,7 @@ class TransparentReminder(QWidget):
         self.player = QMediaPlayer()
         self.player.setAudioOutput(self.audio_output)
 
+        print(ICON_PATH)
         self.tray_icon = QSystemTrayIcon(QIcon(ICON_PATH), self)
         self.tray_menu = TrayMenuCustom(
             self.tray_icon,
@@ -72,9 +74,8 @@ class TransparentReminder(QWidget):
         )
 
     def play_sound(self):
-        sound_location = os.path.join(SCRIPT_PATH, "sounds", "alarm.mp3")
         try:
-            self.player.setSource(QUrl.fromLocalFile(sound_location))
+            self.player.setSource(QUrl.fromLocalFile(ALARM_FILE))
             self.player.play()
             self.update_text()
 
@@ -130,8 +131,7 @@ class TransparentReminder(QWidget):
         # --- MODIFICATION END ---
 
     def load_custom_font(self):
-        font_path = os.path.join(SCRIPT_PATH, "fonts", "KOMIKAX_.ttf")
-        font_id = QFontDatabase.addApplicationFont(font_path)
+        font_id = QFontDatabase.addApplicationFont(FONT_FILE)
         if font_id == -1:
             print("Custom font not found, using default font.")
             return QFont("Arial", 24)

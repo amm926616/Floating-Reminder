@@ -1,3 +1,6 @@
+from PySide6.QtWidgets import QSystemTrayIcon, QMenu
+from PySide6.QtGui import QAction
+
 class TrayMenuCustom:
     def __init__(
         self, tray_icon, update_text, quit_app, open_config_window, play_sound
