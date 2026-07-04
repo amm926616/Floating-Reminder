@@ -1,5 +1,4 @@
 import json
-import os
 
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QFont, QFontDatabase, QGuiApplication, QIcon
@@ -8,7 +7,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QLabel, QLineEdit,
                                QPushButton, QSystemTrayIcon, QVBoxLayout,
                                QWidget)
 
-from src.const import CONFIGS, ICON_PATH, SRC_PATH, load_config, CONFIG_FILE, ASSETS_PATH, FONT_FILE, ALARM_FILE
+from src.const import CONFIGS, ICON_PATH, load_config, CONFIG_FILE, FONT_FILE, ALARM_FILE
 from src.ui.configwindow import ConfigWindow
 from src.ui.traymenu import TrayMenuCustom
 
@@ -17,6 +16,7 @@ class TransparentWidget(QWidget):
     def __init__(self, text, desktop_app_file):
         super().__init__()
 
+        self.config_window = None
         self.font_color = CONFIGS.get("font_color", [255, 0, 0])
         self.transparency = CONFIGS.get("transparency", 150)
         self.padding = CONFIGS.get(
