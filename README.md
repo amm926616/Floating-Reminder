@@ -12,14 +12,6 @@
 
 ---
 
-## 📸 Preview
-
-<p align="center">
-    <img src="images/screenshot.png" width="800">
-</p>
-
----
-
 ## ✨ Why?
 
 Modern computers are full of distractions.
@@ -55,23 +47,9 @@ Just a constant reminder.
 
 ---
 
-## 📷 Screenshots
+## 📷 Screenshot
 
-### Floating Reminder
-
-![Floating Reminder](images/reminder.png)
-
----
-
-### Configuration
-
-![Configuration](images/configuration.png)
-
----
-
-### System Tray
-
-![System Tray](images/tray.png)
+![Floating Reminder](images/screenshot.png)
 
 ---
 

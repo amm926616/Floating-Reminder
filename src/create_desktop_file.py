@@ -1,5 +1,8 @@
 import os
 
+from src.const import SRC_PATH
+
+
 def create_desktop_file(icon_path, exe_path):
     """Create a .desktop file for the application."""
     desktop_file_path = os.path.join(os.path.expanduser("~/.local/share/applications"), "FloatingReminder.desktop")
@@ -9,16 +12,15 @@ def create_desktop_file(icon_path, exe_path):
         os.makedirs(os.path.dirname(desktop_file_path), exist_ok=True)
 
         # Content of the .desktop file
-        desktop_file_content = f"""
-        [Desktop Entry]
-        Name=Floating Reminder
-        Comment=A reminder app to keep you focused
-        Exec=python3 {exe_path}
-        Icon= {icon_path}
-        Type=Application
-        Categories=Utility;Office;
-        StartupWMClass=WhatMattersMost
-        Terminal=false
+        desktop_file_content = f"""[Desktop Entry]
+Name=Floating Reminder
+Comment=A reminder app to keep you focused
+Exec=env PYTHONPATH={SRC_PATH} python {exe_path}
+Icon= {icon_path}
+Type=Application
+Categories=Utility;Office;
+StartupWMClass=WhatMattersMost
+Terminal=false
         """.format(os.path.dirname(os.path.abspath(__file__)), os.path.dirname(os.path.abspath(__file__)))
 
         # Write to the .desktop file
