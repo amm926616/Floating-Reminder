@@ -9,7 +9,6 @@ from PySide6.QtWidgets import (
     QApplication,
     QColorDialog,
     QDialog,
-    QInputDialog,
     QLabel,
     QLineEdit,
     QMenu,
