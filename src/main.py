@@ -1,10 +1,10 @@
 import sys
 
-from PySide6.QtWidgets import (QApplication)
+from PySide6.QtWidgets import QApplication
 
 from const import *
-from create_desktop_file import create_desktop_file
-from src.ui.transparentwidget import TransparentWidget
+from utils.create_desktop_file import create_desktop_file
+from ui.transparentwidget import TransparentWidget
 
 
 def main():

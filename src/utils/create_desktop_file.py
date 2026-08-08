@@ -1,6 +1,6 @@
 import os
 
-from src.const import SRC_PATH
+from const import SRC_PATH
 
 
 def create_desktop_file(icon_path, exe_path):

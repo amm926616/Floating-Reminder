@@ -7,9 +7,9 @@ from PySide6.QtWidgets import (QApplication, QDialog, QLabel, QLineEdit,
                                QPushButton, QSystemTrayIcon, QVBoxLayout,
                                QWidget)
 
-from src.const import CONFIGS, ICON_PATH, load_config, CONFIG_FILE, FONT_FILE, ALARM_FILE
-from src.ui.configwindow import ConfigWindow
-from src.ui.traymenu import TrayMenuCustom
+from const import CONFIGS, ICON_PATH, load_config, CONFIG_FILE, FONT_FILE, ALARM_FILE
+from ui.configwindow import ConfigWindow
+from ui.traymenu import TrayMenuCustom
 
 
 class TransparentWidget(QWidget):

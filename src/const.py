@@ -45,15 +45,14 @@ def get_config_file(config_folder: Path):
 
 # --- Paths and Config Initialization ---
 
-# This file is inside src/, so .parent is src/, and .parent.parent is the project root
+# This file is inside src/, so .parent is src/
 SRC_PATH = Path(__file__).resolve().parent
-ROOT_PATH = SRC_PATH.parent
 
 CONFIG_PATH = get_config_path()
 CONFIG_FILE = CONFIG_PATH / "config.json"
 
 # Asset tracking relative to the root folder
-ASSETS_PATH = ROOT_PATH / "assets"
+ASSETS_PATH = SRC_PATH / "assets"
 ICON_PATH = str(ASSETS_PATH / "resources" / "icon.png")
 
 # Specific asset files based on your directory tree

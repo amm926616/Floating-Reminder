@@ -58,13 +58,13 @@ Just a constant reminder.
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/what-matters-most.git
+git clone https://github.com/amm926616/Floating-Reminder.git
 ```
 
 Go into the project
 
 ```bash
-cd what-matters-most
+cd Floating-Reminder
 ```
 
 Install dependencies
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 Run
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 ---
@@ -89,8 +89,6 @@ python main.py
 - JSON Configuration
 
 ---
-
-## 📂 Project Structure
 
 ## 📂 Project Structure
 
